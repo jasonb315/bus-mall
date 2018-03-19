@@ -30,3 +30,38 @@ new Product('../img/usb.gif','usb');
 new Product('../img/water-can.jpg','water-can');
 new Product('../img/wine-glass.jpg','wine-glass');
 
+var imgElement1 = document.getElementById('slot-one');
+var imgElement2 = document.getElementById('slot-two');
+var imgElement3 = document.getElementById('slot-three');
+
+imgElement1.addEventListener('click', randProduct);
+imgElement2.addEventListener('click', randProduct);
+imgElement3.addEventListener('click', randProduct);
+
+function randProduct (){
+  var randomIndex1 = Math.floor(Math.random() * Goat.allGoats.length);
+
+  imgElement1.src = Goat.allGoats[randomIndex].filepath;
+  imgElement1.alt = Goat.allGoats[randomIndex].name;
+
+  imgElement1.src = Goat.allGoats[randomIndex].filepath;
+  imgElement1.alt = Goat.allGoats[randomIndex].name;
+
+  imgElement1.src = Goat.allGoats[randomIndex].filepath;
+  imgElement1.alt = Goat.allGoats[randomIndex].name;
+}
+
+function randOne() {
+  var num1 = Math.floor(Math.random() * Product.allProduct.length);
+  return (num1);
+}
+
+function randTwo() {
+  var num2 = Math.floor(Math.random() * Product.allProduct.length);
+  return (num2);
+}
+
+function randThree() {
+  var num3 = Math.floor(Math.random() * Product.allProduct.length);
+  return (num3);
+}
