@@ -39,7 +39,7 @@ imgElement2.addEventListener('click', summonThree);
 imgElement3.addEventListener('click', summonThree);
 
 
-
+var pastSummon = [];
 
 function summonThree() {
 
@@ -47,24 +47,33 @@ function summonThree() {
   var indexter2 = 0
   var indexter3 = 0
 
+
   var num1 = Math.floor(Math.random() * Product.allProduct.length);
   indexter1 = num1;
+
+  while (num1 === pastSummon[0] || num1 === pastSummon[1] || num1 === pastSummon[2]){
+    var num1 = Math.floor(Math.random() * Product.allProduct.length);
+    indexter1 = num1;
+  };
+  pastSummon[0]=indexter1;
 
   var num2 = Math.floor(Math.random() * Product.allProduct.length);
   indexter2 = num2;
 
-    while (indexter2 === indexter1){
+    while (indexter2 === indexter1 || num2 === pastSummon[0] || num2 === pastSummon[1] || num2 === pastSummon[2]){
       var num2 = Math.floor(Math.random() * Product.allProduct.length);
       indexter2 = num2;
     };
+    pastSummon[1]=indexter2
 
   var num3 = Math.floor(Math.random() * Product.allProduct.length);
   indexter3 = num3;
   
-    while (indexter3 === indexter1 || indexter3 === indexter2){
+    while (indexter3 === indexter1 || indexter3 === indexter2 || num3 === pastSummon[0] || num3 === pastSummon[1] || num3 === pastSummon[2]){
       var num3 = Math.floor(Math.random() * Product.allProduct.length);
       indexter3 = num3;
     };
+    pastSummon[2]=indexter3
 
   console.log(indexter1);
   console.log(indexter2);
@@ -78,6 +87,7 @@ function summonThree() {
 
   imgElement3.src = Product.allProduct[indexter3].filepath;
   imgElement3.alt = Product.allProduct[indexter3].name;
+
 };
 
 summonThree();
