@@ -1,0 +1,20 @@
+#imgrack {
+  height:500px;
+}
+
+.imgslot {
+  width:20vw;
+  display: inline-block;
+}
+
+#slot-one {
+  width:100%;
+}
+
+#slot-two {
+  width:100%;
+}
+
+#slot-three {
+  width:100%;
+}

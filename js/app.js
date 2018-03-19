@@ -23,7 +23,7 @@ new Product('../img/pen.jpg','pen');
 new Product('../img/pet-sweep.jpg','pet-sweep');
 new Product('../img/scissors.jpg','scissors');
 new Product('../img/shark.jpg','shark');
-new Product('../img/sweep.png','sweep');
+new Product('../img/sweep.jpg','sweep');
 new Product('../img/tauntaun.jpg','tauntaun');
 new Product('../img/unicorn.jpg','unicorn');
 new Product('../img/usb.gif','usb');
@@ -79,3 +79,5 @@ function summonThree() {
   imgElement3.src = Product.allProduct[indexter3].filepath;
   imgElement3.alt = Product.allProduct[indexter3].name;
 };
+
+summonThree();
