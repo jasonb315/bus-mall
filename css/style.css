@@ -57,7 +57,7 @@ main div ul li {
   float:right;
   width:80%;
   height: 45vh;
-  background-color: darkslategrey;
+  /* background-color: darkslategrey; */
 }
 
 .imgslot {
@@ -115,5 +115,5 @@ footer {
   height:10vh;
   width: 100%;
   display: inline-block;
-  background-color:darkslategrey;
+  /* background-color:darkslategrey; */
 }
