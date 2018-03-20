@@ -57,7 +57,7 @@ console.log (currentTarget);
 //MAGIC!!!!!!
 
   voteCount++;
-  if (voteCount <5) {
+  if (voteCount <25) {
     for (var j = 0 ; j < Product.allProduct.length ; j++) {
       if (Product.allProduct[j].filepath === currentTarget){
         Product.allProduct[j].votes++;
@@ -66,7 +66,7 @@ console.log (currentTarget);
     };
     summonThree();
 
-  } else if (voteCount === 5) {
+  } else if (voteCount === 25) {
     displayResults ();
   };
 };
