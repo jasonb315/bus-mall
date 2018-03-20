@@ -36,11 +36,13 @@ new Product('img/usb.gif','usb');
 new Product('img/water-can.jpg','water-can');
 new Product('img/wine-glass.jpg','wine-glass');
 
-var voteResults = document.getElementById('voteResults');
+var voteResults = document.getElementById('voteResults'); //draws results
 
 var imgElement1 = document.getElementById('slot-one');
 var imgElement2 = document.getElementById('slot-two');
 var imgElement3 = document.getElementById('slot-three');
+
+
 
 imgElement1.addEventListener('click', registerVote);
 imgElement2.addEventListener('click', registerVote);
@@ -52,19 +54,21 @@ function registerVote(){//happens just before new three are summoned
 var currentTarget = event.target.currentSrc.slice(53);
 console.log (currentTarget);
 
-  for (var j = 0 ; j < Product.allProduct.length ; j++) {
-    if (Product.allProduct[j].filepath === currentTarget){
-      Product.allProduct[j].votes++;
-      console.log(Product.allProduct[j].votes);
-    }
-  };//MAGIC!!!!!!
+//MAGIC!!!!!!
 
   voteCount++;
   if (voteCount <5) {
+    for (var j = 0 ; j < Product.allProduct.length ; j++) {
+      if (Product.allProduct[j].filepath === currentTarget){
+        Product.allProduct[j].votes++;
+        console.log(Product.allProduct[j].votes);
+      };
+    };
     summonThree();
-  } else if (voteCount = 5) {
+
+  } else if (voteCount === 5) {
     displayResults ();
-  }
+  };
 };
 
 var pastSummon = []; //keeps track of previos set
@@ -128,11 +132,11 @@ function summonThree() {
 function displayResults (){
   for(var i = 0; i < Product.allProduct.length; i++) {
   var liElement = document.createElement('li');
-  liElement.textContent = Product.allProduct[i].name + ' has ' + Product.allProduct[i].votes + ' votes out of ' + Product.allProduct[i].views + ' views.';
+  liElement.textContent = Product.allProduct[i].votes + ' votes for the '+ Product.allProduct[i].name + '.'
+  // liElement.textContent = Product.allProduct[i].name + ' has ' + Product.allProduct[i].votes + ' votes out of ' + Product.allProduct[i].views + ' views.';
   voteResults.appendChild(liElement);
   }
 
 }
-
 
 summonThree();

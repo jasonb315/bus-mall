@@ -41,6 +41,10 @@ main div ul {
   background-color: aqua
 }
 
+main div ul li {
+  line-height: 20px;
+}
+
 #resultrack {
   width:20%;
   height: 75vh;
