@@ -30,6 +30,6 @@ USER STORIES
 
 ##Focus group Participant:
 *As a participant, I want the app to look inviting.
-*As a participant, I wan the app to be easy to use.
+*As a participant, I want the app to be easy to use.
 *As a participant, I want to see how my results compare to other users.
 *As a participant, I want the app to play me the final fantasy victory song upon completion.

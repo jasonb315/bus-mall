@@ -9,13 +9,14 @@ body {
 header {
   width: 100%;
   height: 15vh;
-  background-color: red;
+  background-color: grey;
 }
 
 #logocard {
   height: 100%;
+  width:20%;
   float:left;
-  background-color: blue;
+  background-color: darkgray;
 }
 
 header div p {
@@ -38,7 +39,7 @@ nav ul li {
 
 main div ul {
   display: inline;
-  background-color: aqua
+  background-color: darkgrey
 }
 
 main div ul li {
@@ -49,14 +50,14 @@ main div ul li {
   width:20%;
   height: 75vh;
   float:left;
-  background-color: brown;
+  background-color: gainsboro;
 }
 
 #imgrack {
   float:right;
   width:80%;
   height: 45vh;
-  background-color: greenyellow;
+  /* background-color: darkslategrey; */
 }
 
 .imgslot {
@@ -67,19 +68,19 @@ main div ul li {
 #slot-one {
   display:block;
   margin:auto;
-  width: 80%;
+  width: 60%;
 }
 
 #slot-two {
   display:block;
   margin:auto;
-  width: 80%;
+  width: 60%;
 }
 
 #slot-three {
   display:block;
   margin:auto;
-  width: 80%;
+  width: 60%;
 }
 
 
@@ -91,16 +92,28 @@ main div ul li {
   background-color:grey;
 }
 
+main div input {
+  display:block;
+  margin:auto;
+  margin-top: 15px;
+}
+
+main div label{
+  display:block;
+  text-align: center;
+  margin-top: 15px;
+}
+
 #infobar {
   height:20vh;
   width: 80%;
   display: inline-block;
-  background-color:orange;
+  background-color:darkgray;
 }
 
 footer {
   height:10vh;
   width: 100%;
   display: inline-block;
-  background-color:orangered;
+  /* background-color:darkslategrey; */
 }
