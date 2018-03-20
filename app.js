@@ -62,10 +62,9 @@ console.log (currentTarget);
   voteCount++;
   if (voteCount <5) {
     summonThree();
-  } else {
+  } else if (voteCount = 5) {
     displayResults ();
   }
-
 };
 
 var pastSummon = []; //keeps track of previos set
@@ -113,19 +112,23 @@ function summonThree() {
 
   imgElement1.src = Product.allProduct[indexter1].filepath;
   imgElement1.alt = Product.allProduct[indexter1].name;
+  Product.allProduct[indexter1].views++
+
 
   imgElement2.src = Product.allProduct[indexter2].filepath;
   imgElement2.alt = Product.allProduct[indexter2].name;
+  Product.allProduct[indexter2].views++
 
   imgElement3.src = Product.allProduct[indexter3].filepath;
   imgElement3.alt = Product.allProduct[indexter3].name;
+  Product.allProduct[indexter3].views++
 
 };
 
 function displayResults (){
   for(var i = 0; i < Product.allProduct.length; i++) {
   var liElement = document.createElement('li');
-  liElement.textContent = Product.allProduct[i].name + ' has ' + Product.allProduct[i].votes + ' votes out of ' + '.';
+  liElement.textContent = Product.allProduct[i].name + ' has ' + Product.allProduct[i].votes + ' votes out of ' + Product.allProduct[i].views + ' views.';
   voteResults.appendChild(liElement);
   }
 
