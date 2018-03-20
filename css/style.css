@@ -92,16 +92,28 @@ main div ul li {
   background-color:grey;
 }
 
+main div input {
+  display:block;
+  margin:auto;
+  margin-top: 15px;
+}
+
+main div label{
+  display:block;
+  text-align: center;
+  margin-top: 15px;
+}
+
 #infobar {
   height:20vh;
   width: 80%;
   display: inline-block;
-  background-color:darkslategrey;
+  background-color:darkgray;
 }
 
 footer {
   height:10vh;
   width: 100%;
   display: inline-block;
-  background-color:beige;
+  background-color:darkslategrey;
 }
