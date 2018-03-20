@@ -54,7 +54,7 @@ console.log ('img clicked = ' + currentTarget);
     for (var j = 0 ; j < Product.allProduct.length ; j++) {
       if (Product.allProduct[j].filepath === currentTarget){
         Product.allProduct[j].votes++;
-        console.log('Times img clicked previously clicked: ' + Product.allProduct[j].votes);
+        console.log('Times img clicked was previously clicked: ' + Product.allProduct[j].votes);
       };
     };
     summonThree();
