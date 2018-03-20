@@ -9,9 +9,7 @@ function Product (filepath, name){
   this.clicktime = 0
   this.views = 0;
   this.votes = 0;
-  // this.counter = function () {
 
-  // }
   Product.allProduct.push(this);
 }; //product constructor
 
@@ -42,31 +40,26 @@ var imgElement1 = document.getElementById('slot-one');
 var imgElement2 = document.getElementById('slot-two');
 var imgElement3 = document.getElementById('slot-three');
 
-
-
 imgElement1.addEventListener('click', registerVote);
 imgElement2.addEventListener('click', registerVote);
 imgElement3.addEventListener('click', registerVote);
 
-
 function registerVote(){//happens just before new three are summoned
 
 var currentTarget = event.target.currentSrc.slice(53);
-console.log (currentTarget);
-
-//MAGIC!!!!!!
+console.log ('img clicked = ' + currentTarget);
 
   voteCount++;
-  if (voteCount <25) {
+  if (voteCount <26) {
     for (var j = 0 ; j < Product.allProduct.length ; j++) {
       if (Product.allProduct[j].filepath === currentTarget){
         Product.allProduct[j].votes++;
-        console.log(Product.allProduct[j].votes);
+        console.log('Times img clicked previously clicked: ' + Product.allProduct[j].votes);
       };
     };
     summonThree();
 
-  } else if (voteCount === 25) {
+  } else if (voteCount === 26) {
     displayResults ();
   };
 };
@@ -108,16 +101,16 @@ function summonThree() {
     pastSummon[1]=num2;
     pastSummon[2]=num3;
 
-    // console.log('voteCount = ' + voteCount);
-    // console.log(indexter1);
-    // console.log(indexter2);
-    // console.log(indexter3);
-    // console.log('previous three: ' + pastSummon);
-
+    console.log('Current voteCount = ' + voteCount);
+    console.log('left pic index: ' + indexter1);
+    console.log('middle pic index: ' + indexter2);
+    console.log('right pic index: ' + indexter3);
+    console.log('^v^v^v^v^v^v^v^v^v^v^v^v^');
+    console.log('previous three summoned: ' + pastSummon);
+    
   imgElement1.src = Product.allProduct[indexter1].filepath;
   imgElement1.alt = Product.allProduct[indexter1].name;
   Product.allProduct[indexter1].views++
-
 
   imgElement2.src = Product.allProduct[indexter2].filepath;
   imgElement2.alt = Product.allProduct[indexter2].name;
