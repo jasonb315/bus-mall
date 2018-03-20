@@ -73,15 +73,19 @@ registerVoteC();
 
 function registerVoteA(){
 //vote count for [loop through product array until img alt equals display img of (slot-one)] add votes to that object in array.
+//reset radio button
+
 };
 
 function registerVoteB(){
 //vote count for [loop through product array until img alt equals display img of (slot-two)] add votes to that object in array.
+//reset radio button
 
 };
 
 function registerVoteC(){
 //vote count for [loop through product array until img alt equals display img of (slot-three)] add votes to that object in array.
+//reset radio button
 
 };
 
