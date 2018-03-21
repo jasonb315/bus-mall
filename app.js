@@ -5,39 +5,53 @@ var voteCount = 0;
 var productVotes = [];
 var productNames = [];
 
+
 function Product (filepath, name){
   this.filepath = filepath;
   this.name = name;
   this.clicktime = 0
   this.views = 0;
   this.votes = 0;
-  // this.counter = function () {
-
-  // }
   Product.allProduct.push(this);
 }; //product constructor
 
-new Product('img/bag.jpg', 'bag');
-new Product('img/banana.jpg','banana');
-new Product('img/bathroom.jpg','bathroom');
-new Product('img/boots.jpg','boots');
-new Product('img/breakfast.jpg','breakfast');
-new Product('img/bubblegum.jpg','bubblegum');
-new Product('img/chair.jpg','chair');
-new Product('img/cthulhu.jpg','cthulhu');
-new Product('img/dog-duck.jpg','dog-duck');
-new Product('img/dragon.jpg','dragon');
-new Product('img/pen.jpg','pen');
-new Product('img/pet-sweep.jpg','pet-sweep');
-new Product('img/scissors.jpg','scissors');
-new Product('img/shark.jpg','shark');
-new Product('img/sweep.jpg','sweep');
-new Product('img/tauntaun.jpg','tauntaun');
-new Product('img/unicorn.jpg','unicorn');
-new Product('img/usb.gif','usb');
-new Product('img/water-can.jpg','water-can');
-new Product('img/wine-glass.jpg','wine-glass');
+//on load: check for bank of photo objects.
+//if present, pass photo objects to Product.allProduct
+//if not present, draw new array and assign to Product.allProduct
+function setupPictures (){
+  var picCheck = JSON.parse(localStorage.getItem('picBank'));
+  console.log('picCheck' + picCheck);
+  if (picCheck && picCheck.length){
+    Product.allProduct = picCheck;
+    console.log('Product.allProduct set to picCheck: ' + picCheck);
+  } else {
 
+        new Product('img/bag.jpg', 'bag');
+        new Product('img/banana.jpg','banana');
+        new Product('img/bathroom.jpg','bathroom');
+        new Product('img/boots.jpg','boots');
+        new Product('img/breakfast.jpg','breakfast');
+        new Product('img/bubblegum.jpg','bubblegum');
+        new Product('img/chair.jpg','chair');
+        new Product('img/cthulhu.jpg','cthulhu');
+        new Product('img/dog-duck.jpg','dog-duck');
+        new Product('img/dragon.jpg','dragon');
+        new Product('img/pen.jpg','pen');
+        new Product('img/pet-sweep.jpg','pet-sweep');
+        new Product('img/scissors.jpg','scissors');
+        new Product('img/shark.jpg','shark');
+        new Product('img/sweep.jpg','sweep');
+        new Product('img/tauntaun.jpg','tauntaun');
+        new Product('img/unicorn.jpg','unicorn');
+        new Product('img/usb.gif','usb');
+        new Product('img/water-can.jpg','water-can');
+        new Product('img/wine-glass.jpg','wine-glass');
+        localStorage.setItem('picBank', JSON.stringify(Product.allProduct));
+        console.log('written');
+        console.log(localStorage.picBank);
+      }   
+      summonThree();
+    }//close setupPictures
 
 
 var voteResults = document.getElementById('voteResults'); //draws results
@@ -114,11 +128,11 @@ function summonThree() {
   pastSummon[1]=num2;
   pastSummon[2]=num3;
 
-  console.log('voteCount = ' + voteCount);
+  // console.log('voteCount = ' + voteCount);
   // console.log(indexter1);
   // console.log(indexter2);
   // console.log(indexter3);
-  console.log('previous three: ' + pastSummon);
+  // console.log('previous three: ' + pastSummon);
 
   imgElement1.src = Product.allProduct[indexter1].filepath;
   imgElement1.alt = Product.allProduct[indexter1].name;
@@ -147,8 +161,8 @@ function displayResults (){
   };//end for
 };//end display Results
 
-summonThree();
 
+setupPictures ();
 
 
 //////////////////////////////////////////////////////////////
@@ -157,7 +171,7 @@ function updateVotes() {
   for(var i in Product.allProduct) {
 
     productVotes.push(Product.allProduct[i].votes);
-    console.log(productVotes);
+    // console.log(productVotes);
   };
 };
 
@@ -165,12 +179,14 @@ function updateNames() {
   for(var i in Product.allProduct) {
 
     productNames.push(Product.allProduct[i].name);
-    console.log(productNames);
+    // console.log(productNames);
   };
 };
 
 function renderChart() {
   // access the canvas element from the DOM
+  localStorage.setItem('picBank', JSON.stringify(Product.allProduct));
+
   var ctx = document.getElementById('product-graph').getContext('2d');
 
   var arrayOfColors = ['green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', ];
