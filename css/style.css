@@ -9,14 +9,21 @@ body {
 header {
   width: 100%;
   height: 15vh;
-  background-color: grey;
+  background-color: white;
+  font-family: 'Roboto Slab', serif;
 }
 
 #logocard {
   height: 100%;
-  width:30%;
+  width:40%;
   float:left;
   background-color: white;
+  font-family: 'Faster One', cursive;
+  color: red;
+}
+
+body header div p {
+  font-size: 50px;
 }
 
 #logopic {
@@ -32,6 +39,16 @@ header div p {
 #linkcard {
   height: 100%;
   float:right;
+  font-size: 20px;
+}
+
+.toplink {
+  text-decoration: none;
+}
+
+a:hover { 
+  font-size: 21px;
+  color: red;
 }
 
 nav ul {
@@ -42,12 +59,12 @@ nav ul {
 nav ul li {
   display: inline-block;
   padding: 10px;
-  padding:25px;
+  padding:15px;
 }
 
 main div ul {
   display: inline;
-  background-color: darkgrey
+  background-color: white;
 }
 
 main div ul li {
@@ -57,16 +74,19 @@ main div ul li {
 
 
 #resultrack {
-  width:20%;
+  width:30%;
   height: 75vh;
   float:left;
   background-color: gainsboro;
+  border:1px solid black;
+  font-family: 'Roboto Slab', serif;
 }
 
 #imgrack {
   float:right;
-  width:80%;
+  width:70%;
   height: 45vh;
+  border:1px solid black;
   /* background-color: lightblue; */
 }
 
@@ -95,9 +115,10 @@ main div ul li {
 
 #votediv {
   height:10vh;
-  width: 80%;
+  width: 70%;
   display: inline-block;
   background-color:grey;
+  border:1px solid black;
 }
 
 main div input {
@@ -114,14 +135,23 @@ main div label{
 
 #infobar {
   height:20vh;
-  width: 80%;
+  width: 70%;
   display: inline-block;
   background-color:darkgray;
+  border:1px solid black;
+  color: white;
+}
+
+.instructional {
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Lobster', cursive;
+
 }
 
 footer {
-  height:10vh;
   width: 100%;
   display: inline-block;
+  border:1px solid black;
   /* background-color:darkslategrey; */
 }

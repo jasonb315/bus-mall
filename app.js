@@ -155,7 +155,7 @@ function displayResults (){
 
   var liElement = document.createElement('li');
 
-  liElement.textContent = Product.allProduct[i].votes + ' votes for the '+ Product.allProduct[i].name + '.'
+  liElement.textContent = Product.allProduct[i].votes + ' votes for ' + Product.allProduct[i].name + ' out of '+ Product.allProduct[i].views + ' views.'
 
   voteResults.appendChild(liElement);
 
