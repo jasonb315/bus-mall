@@ -51,7 +51,8 @@ function setupPictures (){
         console.log(localStorage.picBank);
       }   
       summonThree();
-    }//close setupPictures
+    };
+    //close setupPictures
 
 
 var voteResults = document.getElementById('voteResults'); //draws results
@@ -189,7 +190,8 @@ function renderChart() {
 
   var ctx = document.getElementById('product-graph').getContext('2d');
 
-  var arrayOfColors = ['green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', ];
+  // var arrayOfColors = ['green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', ];
+  var arrayOfColors = ['lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue'];
 
   new Chart(ctx, {
     type: 'horizontalBar',
